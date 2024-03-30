@@ -1,0 +1,35 @@
+name: Bedwars
+version: 0.1
+main: org.bedwars.Bedwars
+api-version: 1.20
+depend: [Citizens]
+
+commands:
+  gm:
+    usage: /gm {0..3}
+  gmc:
+    aliases: [ "gma", "gms", "gmsp" ]
+  forcestart:
+    usage: /forcestart
+    aliases: [ "fs" ]
+  shout:
+    usage: /shout {msg}
+  stats:
+    usage: /stats
+    aliases: [ "st" ]
+
+  # DEBUG, DA TOGLIERE
+  resetquick:
+    usage: /resetquick
+    aliases: [ "rq" ]
+
+permissions:
+  bedwars.*: # tutti i comandi
+    children:
+      bedwars.gamemode: true
+      bedwars.forcestart: true
+    default: op
+  bedwars.gamemode:
+    default: op
+  bedwars.forcestart:
+    default: op
