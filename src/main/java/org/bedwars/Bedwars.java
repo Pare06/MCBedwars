@@ -81,7 +81,7 @@ public class Bedwars extends JavaPlugin {
                     "finals int DEFAULT 0," +
                     "beds int DEFAULT 0," +
                     "winstreak int DEFAULT 0," +
-                    "flair int DEFAULT 0," +
+                    "flair int DEFAULT 1," +
                     "unlockedFlairs int DEFAULT 1," +
                     // fino a 21 indici, 7 per riga, -1 = piccone, -2 = ascia, -3: niente
                     "quickShop varchar(255) DEFAULT '9 0 3 8 26 23 25 10 1 4 6 -1 24 12 2 5 7 -2 27 -3 -3')";
@@ -134,7 +134,7 @@ public class Bedwars extends JavaPlugin {
         getCommand("shout").setExecutor(new ShoutCommand());
         getCommand("stats").setExecutor(new StatsCommand());
 
-        // COMANDI DEBUG - SENZA PERMESSI SETTATI, DA TOGLIERE
+        // DEBUG
         getCommand("resetquick").setExecutor(new ResetQuickShop());
     }
 
@@ -163,8 +163,6 @@ public class Bedwars extends JavaPlugin {
         mode.applyPattern();
 
         Inventories.ModeSelection = mode;
-
-        // inventari villager
 
         ShopConfig.initialize();
         UpgradeShopConfig.initialize();

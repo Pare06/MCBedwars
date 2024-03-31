@@ -16,7 +16,12 @@ import org.bukkit.entity.Player;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
+/**
+ * Rappresenta le statistiche di un giocatore.
+ */
 public class GameStats {
     private final BWPlayer bwPlayer;
     private OfflinePlayer player;
@@ -30,11 +35,19 @@ public class GameStats {
     private int bedsBroken;
     private int streak;
 
+    /**
+     * Crea un'oggetto {@code GameStats}
+     * @param p il giocatore a cui dare le statistiche
+     */
     public GameStats(BWPlayer p) {
         bwPlayer = p;
         player = p.getPlayer();
     }
 
+    /**
+     * Carica le statistiche dal risultato di una query SQL.
+     * @param result la query
+     */
     public void loadFromQuery(ResultSet result) {
         try {
             level = result.getInt("level");
@@ -46,6 +59,7 @@ public class GameStats {
             finals = result.getInt("finals");
             bedsBroken = result.getInt("beds");
             streak = result.getInt("winstreak");
+            bwPlayer.setQuickShop(new ArrayList<>(Arrays.stream(result.getString("quickShop").split(" ")).map(Integer::valueOf).toList()));
 
             addPoints(0); // aggiorna xp bar
         } catch (SQLException e) {
@@ -53,14 +67,26 @@ public class GameStats {
         }
     }
 
+    /**
+     * Restituisce il livello del giocatore.
+     * @return il livello
+     */
     public int getLevel() {
         return level;
     }
 
+    /**
+     * Restituisce i punti XP del giocatore.
+     * @return i punti XP
+     */
     public int getPoints() {
         return points;
     }
 
+    /**
+     * Aggiunge punti XP al giocatore, aggiorna la barra XP, e, se necessario, aumenta il livello.
+     * @param points i punti da aggiungere
+     */
     @SuppressWarnings("DataFlowIssue")
     public void addPoints(int points) {
         this.points += points;
@@ -82,14 +108,21 @@ public class GameStats {
         if (player.isOnline()) {
             Player onlinePlayer = player.getPlayer();
             onlinePlayer.setLevel(level);
-            onlinePlayer.setExp((float)this.points / requiredXPToNextLevel()); // setExp va da 0 (0%) a 1 (100%) godoooooo
+            onlinePlayer.setExp((float)this.points / requiredXPToNextLevel()); // setExp va da 0 (0%) a 1 (100%)
         }
     }
 
+    /**
+     * Restituisce il numero di partite vinte.
+     * @return il numero di partite vinte
+     */
     public int getWins() {
         return wins;
     }
 
+    /**
+     * Aggiunge una vittoria al giocatore.
+     */
     public void addWin() {
         wins++;
         streak++;
@@ -102,19 +135,33 @@ public class GameStats {
         addPoints(ExperienceConfig.WIN_XP);
     }
 
+    /**
+     * Restituisce il numero di partite perse.
+     * @return il numero di partite perse
+     */
     public int getLosses() {
         return losses;
     }
 
+    /**
+     * Aggiunge una sconfitta al giocatore.
+     */
     public void addLoss() {
         losses++;
         streak = 0;
     }
 
+    /**
+     * Restituisce il numero di uccisioni.
+     * @return il numero di uccisioni
+     */
     public int getKills() {
         return kills;
     }
 
+    /**
+     * Aggiunge un'uccisione al giocatore.
+     */
     public void addKill() {
         kills++;
 
@@ -123,27 +170,48 @@ public class GameStats {
         addPoints(ExperienceConfig.KILL_XP);
     }
 
+    /**
+     * Restituisce il numero di morti.
+     * @return il numero di morti
+     */
     public int getDeaths() {
         return deaths;
     }
 
+    /**
+     * Aggiunge una morte al giocatore.
+     */
     public void addDeath() {
         deaths++;
     }
 
+    /**
+     * Restituisce il numero di uccisioni finali.
+     * @return il numero di uccisioni finali
+     */
     public int getFinals() {
         return finals;
     }
 
+    /**
+     * Aggiunge un'uccisione finale al giocatore.
+     */
     public void addFinal() {
         finals++;
         addPoints(ExperienceConfig.FINAL_XP);
     }
 
+    /**
+     * Restituisce il numero di letti distrutti.
+     * @return il numero di letti distrutti
+     */
     public int getBeds() {
         return bedsBroken;
     }
 
+    /**
+     * Aggiunge un letto distrutto al giocatore.
+     */
     public void addBed() {
         bedsBroken++;
 
@@ -152,18 +220,33 @@ public class GameStats {
         addPoints(ExperienceConfig.BED_XP);
     }
 
+    /**
+     * Restituisce la serie di vittorie attuale.
+     * @return la serie di vittorie
+     */
     public int getStreak() {
         return streak;
     }
 
+    /**
+     * Restituisce i punti XP necessari per salire di livello.
+     * @return i punti XP mancanti
+     */
     public int requiredXPToNextLevel() {
         return (int) Math.pow((level) / ExperienceConfig.UNKNOWN_FACTOR, ExperienceConfig.SCALING_FACTOR);
     }
 
+    /**
+     * Aggiorna il giocatore.
+     * @param p il nuovo giocatore
+     */
     public void refresh(Player p) {
         player = p;
     }
 
+    /**
+     * Mostra al giocatore la GUI contenente le statistiche.
+     */
     public void showGUI() {
         GUI gui = new GUI(Component.text("Statistiche").color(NamedTextColor.GREEN), 36);
         gui.setPattern("         " +
