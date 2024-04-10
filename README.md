@@ -8,7 +8,12 @@ Bedwars è una modalità di gioco di Minecraft dove per vincere bisogna distrugg
 ![L'isola iniziale del gioco](https://i.ibb.co/chfnVFk/immagine.png)
 
 Senza di esso, la morte comporta la perdita della partita.
-(TODO gif rottura letti + altra roba sulla modalità)
+(TODO gif rottura letti)
+
+Durante la partita, i giocatori possono interagire con il negozio per comprare oggetti, potenziamenti e blocchi per raggiungere gli altri giocatori.
+(TODO foto shop + upgrades, gif per le categorie + <details>)
+
+
 
 ## Com'è stato fatto?
 Il plugin è stato fatto in Java, nell'ambiente di sviluppo IntelliJ IDEA Ultimate.\
