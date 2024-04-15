@@ -583,7 +583,7 @@ public class Arena {
         new BukkitRunnable() {
             @Override
             public void run() {
-                //noinspection DataFlowIssue (se world è null mi sa che sono cazzi)
+                //noinspection DataFlowIssue (world non può essere null)
                 for (Player p : world.getPlayers()) {
                     BWPlayer bwPlayer = BWPlayer.get(p);
 
