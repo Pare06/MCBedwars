@@ -11,7 +11,7 @@ Senza di esso, la morte comporta la perdita della partita.
 (TODO gif rottura letti)
 
 Durante la partita, i giocatori possono interagire con il negozio per comprare oggetti, potenziamenti e blocchi per raggiungere gli altri giocatori.
-(TODO foto shop + upgrades, gif per le categorie + <details>)
+(TODO foto shop + upgrades, gif per le categorie + details)
 
 
 
@@ -32,3 +32,28 @@ Tutti i dati del plugin sono memorizzati in un [file](https://www.mediafire.com/
 - [Java 21](https://www.oracle.com/it/java/technologies/downloads/#java21)
 - [Paper 1.20](https://papermc.io/downloads/paper)
 - [Citizens](https://ci.citizensnpcs.co/job/Citizens2/)
+
+<details>
+<summary>Struttura classi</summary>
+  <details>
+    <summary>org.bedwars - contiene la classe base Bedwars</summary>
+    <details>
+      <summary>chat - logica per i messaggi inviati nella chat di gioco</summary>
+      commands - comando /shout, che invia un messaggio a tutti i giocatori<br>
+      listeners - per modificare i messaggi inviati
+    </details>
+    config - tutte le classi contenenti informazioni sulle mappe di gioco, costanti, negozi, e altro
+    <details>
+      <summary>game - logica di gioco</summary>
+      commands - comando /forcestart, che inizia una partita anche se non ci sono abbastanza giocatori<br>
+      listeners - per catturare tutti gli eventi di gioco, per esempio un blocco piazzato o un letto distrutto<br>
+      <details>
+        <summary>shop - per gestire il negozio</summary>
+        listeners -  eventi relativi ai negozi
+      </details>
+      general - comandi e eventi globali
+      inventories - eventi relativi agli inventari di gioco
+      lobby - 
+    </details>
+  </details>
+</details>
