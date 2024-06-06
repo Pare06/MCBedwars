@@ -17,10 +17,10 @@ Tutti i dati del plugin sono memorizzati in un file .sql, gestito con SQLite.
 
 ## Funzionalità
 Durante la partita, i giocatori possono interagire con il negozio per comprare oggetti, potenziamenti e blocchi per raggiungere gli altri giocatori.
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjhzcndpeTgxZ2M5dm9heTVheWdmOGNtZjIybXZ4Mng1M29ndTZvayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AKnJHiXzzUES8C7LyS/giphy.gif)
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjhzcndpeTgxZ2M5dm9heTVheWdmOGNtZjIybXZ4Mng1M29ndTZvayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AKnJHiXzzUES8C7LyS/giphy-downsized-large.gif)
 
 Oltre alle isole dei giocatori, al centro della mappa sono presenti altre isole secondarie dove vengono generati diamanti e smeraldi, che possono essere usati per acquistare potenziamenti.
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjk2NXNtM3Z6M2prdDVvZjc3bHBzOGowNmdoYWt0b2M3NHZrdW8wayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/42zWiGpbwQg7tCfHEM/giphy.gif)
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjk2NXNtM3Z6M2prdDVvZjc3bHBzOGowNmdoYWt0b2M3NHZrdW8wayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/42zWiGpbwQg7tCfHEM/giphy-downsized-large.gif)
 
 Eseguendo azioni particolari, come uccidere una squadra intera da soli oppure vincendo un certo numero di partite si sbloccano gli "achievements",
 ovvero dei titoli che permettono di (TODO che metto?)
@@ -37,7 +37,7 @@ Quando un giocatore senza un letto viene ucciso, verrà considerato eliminato ma
 (TODO gif spect)
 
 Se un giocatore dovesse perdere la connessione, può riconnettersi ed essere sempre considerato in gioco, a meno che il suo letto non sia stato distrutto.<br>
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWh3MHN1NWhnaTYycGZlMGoyc2tzcHV4Y2ltc3dldnMzdnJnbTh4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qqRPRyEQ9b41ghnadb/giphy.gif)
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWh3MHN1NWhnaTYycGZlMGoyc2tzcHV4Y2ltc3dldnMzdnJnbTh4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qqRPRyEQ9b41ghnadb/giphy-downsized-large.gif)
 
 ### Librerie utilizzate:
 
