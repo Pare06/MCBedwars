@@ -5,7 +5,7 @@ Questo mio progetto è un plugin per server [**Minecraft**](https://www.minecraf
 ## Cos'è?
 Bedwars è una modalità di gioco di Minecraft dove per vincere bisogna distruggere i letti degli avversari, mentre si protegge il proprio.
 
-![L'isola iniziale del gioco](https://i.ibb.co/chfnVFk/immagine.png)
+![](https://i.ibb.co/chfnVFk/immagine.png)
 
 Senza di esso, la morte comporta la perdita della partita.
 (TODO gif rottura letti)
@@ -16,28 +16,23 @@ Per eseguirlo, mi sono appoggiato a [PaperMC](https://papermc.io), una fork del 
 Tutti i dati del plugin sono memorizzati in un file .sql, gestito con SQLite.
 
 ## Funzionalità
-Durante la partita, i giocatori possono interagire con il negozio per comprare oggetti, potenziamenti e blocchi per raggiungere gli altri giocatori.
+Durante la partita, i giocatori possono interagire con il negozio per comprare oggetti, potenziamenti e blocchi per raggiungere gli altri giocatori.<br>
 ![](gifs/quickshop.gif)
 
-Oltre alle isole dei giocatori, al centro della mappa sono presenti altre isole secondarie dove vengono generati diamanti e smeraldi, che possono essere usati per acquistare potenziamenti.
+Oltre alle isole dei giocatori, al centro della mappa sono presenti altre isole secondarie dove vengono generati diamanti e smeraldi, che possono essere usati per acquistare potenziamenti.<br>
 ![](gifs/spawner.gif)
 
-Eseguendo azioni particolari, come uccidere una squadra intera da soli oppure vincendo un certo numero di partite si sbloccano gli "achievements",
-ovvero dei titoli che permettono di (TODO che metto?)
-(TODO gif schermata achievements)
+Ad ogni uccisione, letto distrutto o partita vinta si ottengono punti esperienza, che permettono di salire di livello.<br>
+![](gifs/levelup.gif)
 
-Durante la partita, a intervalli regolari la mappa riceverà delle modifiche che rendono più veloce la partita,
-e dopo 75 minuti dall'inizio della partita verranno distrutti tutti i letti dei giocatori, per permettere di finire in fretta la partita.
-(TODO gif countdown upgrades)
-
-Ad ogni uccisione, letto distrutto o partita vinta si ottengono punti esperienza, che permettono di salire di livello.
-(TODO gif level up)
-
-Quando un giocatore senza un letto viene ucciso, verrà considerato eliminato ma potrà comunque vedere l'andamento della partita, senza interferire.
-(TODO gif spect)
+Quando un giocatore senza un letto viene ucciso, verrà considerato eliminato ma potrà comunque vedere l'andamento della partita, senza interferire.<br>
+![](gifs/spect.gif)
 
 Se un giocatore dovesse perdere la connessione, può riconnettersi ed essere sempre considerato in gioco, a meno che il suo letto non sia stato distrutto.<br>
 ![](gifs/rejoin.gif)
+Durante la partita, a intervalli regolari la mappa riceverà delle modifiche che rendono più veloce la partita,
+
+e dopo 75 minuti dall'inizio della partita verranno distrutti tutti i letti dei giocatori, per permettere di finire in fretta la partita.
 
 ### Librerie utilizzate:
 
