@@ -8,7 +8,6 @@ Bedwars è una modalità di gioco di Minecraft dove per vincere bisogna distrugg
 ![](https://i.ibb.co/chfnVFk/immagine.png)
 
 Senza di esso, la morte comporta la perdita della partita.
-(TODO gif rottura letti)
 
 ## Com'è stato fatto?
 Il plugin è stato fatto in Java, nell'ambiente di sviluppo IntelliJ IDEA Ultimate.\
@@ -30,9 +29,8 @@ Quando un giocatore senza un letto viene ucciso, verrà considerato eliminato ma
 
 Se un giocatore dovesse perdere la connessione, può riconnettersi ed essere sempre considerato in gioco, a meno che il suo letto non sia stato distrutto.<br>
 ![](gifs/rejoin.gif)
-Durante la partita, a intervalli regolari la mappa riceverà delle modifiche che rendono più veloce la partita,
 
-e dopo 75 minuti dall'inizio della partita verranno distrutti tutti i letti dei giocatori, per permettere di finire in fretta la partita.
+Durante la partita, a intervalli regolari la mappa riceverà delle modifiche che rendono più veloce la partita, e dopo 75 minuti dall'inizio della partita verranno distrutti tutti i letti dei giocatori, per permettere di finire in fretta la partita.
 
 ### Librerie utilizzate:
 
